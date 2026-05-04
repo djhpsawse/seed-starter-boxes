@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coco Coir + Seed Planting (Kid-Friendly Guide)</title>
+  <style>
+    :root{
+      --bg: #f6faf7;
+      --card: #ffffff;
+      --text: #17321f;
+      --muted: #4b5b50;
+      --green: #2e7d32;
+      --green2:#43a047;
+      --line:#d7e5da;
+      --shadow: 0 10px 30px rgba(0,0,0,.07);
+      --radius: 18px;
+    }
+    [data-theme="dark"]{
+      --bg: #0f1812;
+      --card:#121f17;
+      --text:#e8f3ea;
+      --muted:#b3c2b7;
+      --green:#68d16e;
+      --green2:#3bbf63;
+      --line:#233529;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    header{
+      padding: 28px 16px 18px;
+      background:
+        radial-gradient(800px 250px at 20% 0%, rgba(67,160,71,.25), transparent 60%),
+        radial-gradient(700px 260px at 85% 10%, rgba(46,125,50,.20), transparent 60%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap{max-width: 1100px; margin: 0 auto;}
+    .topbar{
+      display:flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800;
+      letter-spacing:.2px;
+      font-size: 16px;
+    }
+    .brand .logo{
+      width: 40px; height: 40px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(46,125,50,.15);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .controls{display:flex; gap:10px; align-items:center;}
+    button, .chip{
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      font-weight: 650;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    button:hover{transform: translateY(-1px);}
+    button:active{transform: translateY(0);}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items:stretch;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr;}
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    h1{
+      margin: 6px 0 8px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height:1.15;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .meta{
+      margin-top: 10px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 13px;
+      align-items:center;
+    }
+    .meta .dot{opacity:.55}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.5fr .9fr;
+      gap: 16px;
+      margin: 18px auto 34px;
+      padding: 0 16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr;}
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    h3{
+      margin: 14px 0 8px;
+      font-size: 16px;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(67,160,71,.10);
+      font-weight: 700;
+      margin: 8px 0 0;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 650px){
+      .two{grid-template-columns: 1fr;}
+    }
+
+    .callout{
+      border-left: 5px solid var(--green2);
+      background: rgba(67,160,71,.10);
+      padding: 12px;
+      border-radius: 14px;
+      margin: 12px 0;
+    }
+
+    details{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+      margin: 10px 0;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight: 800;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    summary::-webkit-details-marker{display:none;}
+    .stepTitle{
+      display:flex; align-items:center; gap:10px;
+    }
+    .badge{
+      width: 28px; height: 28px; border-radius: 10px;
+      display:grid; place-items:center;
+      background: rgba(46,125,50,.14);
+      border: 1px solid var(--line);
+      font-weight: 900;
+    }
+    .chev{opacity:.75}
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    .list li{margin: 6px 0;}
+
+    .imgbox{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px dashed var(--line);
+      background: rgba(0,0,0,.02);
+      margin: 10px 0;
+    }
+    [data-theme="dark"] .imgbox{background: rgba(255,255,255,.03);}
+
+    .svg{
+      width: 92px; min-width: 92px; height: 92px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(46,125,50,.08);
+      display:grid; place-items:center;
+    }
+    .imgtext p{margin:0; color: var(--muted); font-size: 14px;}
+    .imgtext strong{display:block; margin-bottom: 4px;}
+
+    .checklist label{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      margin: 8px 0;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      cursor:pointer;
+    }
+    .checklist input{margin-top: 3px; transform: scale(1.15);}
+    .progress{
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.08);
+      overflow:hidden;
+      border: 1px solid var(--line);
+    }
+    [data-theme="dark"] .progress{background: rgba(255,255,255,.08);}
+    .bar{
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--green2));
+      transition: width .25s ease;
+    }
+    .small{
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .quiz{
+      display:grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .q{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .q p{margin:0 0 8px; font-weight: 800;}
+    .q .answers{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .q .answers button{
+      padding: 8px 10px;
+      box-shadow: none;
+    }
+    .result{
+      margin-top: 8px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+    .result.good{color: var(--green2);}
+    .result.bad{color: #d84315;}
+
+    footer{
+      padding: 26px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align:center;
+    }
+    a{color: var(--green2); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* Print-friendly */
+    @media print{
+      header .controls, .no-print{display:none !important;}
+      body{background:#fff; color:#000;}
+      .card, details, .q, .checklist label{box-shadow:none;}
+      .grid{max-width:100%; padding:0;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand" aria-label="Site title">
+          <div class="logo" aria-hidden="true">🌱</div>
+          Green Sprouts School Blog
+        </div>
+
+        <div class="controls no-print">
+          <button id="themeBtn" type="button" aria-pressed="false" title="Toggle dark mode">
+            🌙 <span>Dark mode</span>
+          </button>
+          <button type="button" onclick="window.print()" title="Print this page">
+            🖨️ <span>Print</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="card">
+          <span class="pill">🧑‍🎓 School Project / Beginner Guide</span>
+          <h1>How to Use Coco Coir & Plant Seeds in Pots</h1>
+          <p class="subtitle">
+            A simple step‑by‑step guide with pictures, a checklist, and a quick quiz.
+            Perfect for beginners!
+          </p>
+          <div class="meta" aria-label="Post details">
+            <span>✍️ Author: You</span>
+            <span class="dot">•</span>
+            <span>🏫 Subject: Science / Gardening</span>
+            <span class="dot">•</span>
+            <span>⏱️ Time: 20–30 mins</span>
+          </div>
+
+          <div class="callout">
+            <strong>What is coco coir?</strong><br />
+            It’s the soft, brown “fluff” made from coconut husks. It helps hold water and gives roots air.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>🧰 What you need</h2>
+          <div class="two">
+            <div>
+              <h3>Tools</h3>
+              <ul class="list">
+                <li>Small pots (with holes)</li>
+                <li>Tray or plate (to catch drips)</li>
+                <li>Spray bottle or small watering can</li>
+                <li>Labels (or lolly sticks)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Materials</h3>
+              <ul class="list">
+                <li>Coco coir block or loose coco coir</li>
+                <li>Seeds</li>
+                <li>Warm water</li>
+                <li>Optional: a little compost / plant food later</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="imgbox" role="note" aria-label="Picture box">
+            <div class="svg" aria-hidden="true">
+              <!-- Simple inline SVG image (bucket + coir) -->
+              <svg width="92" height="92" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="92" height="92" rx="18" fill="rgba(46,125,50,.10)"/>
+                <path d="M28 30h36l-4 42H32l-4-42Z" fill="rgba(19,50,31,.25)" stroke="rgba(23,50,31,.55)" stroke-width="2"/>
+                <path d="M32 26h28" stroke="rgba(23,50,31,.75)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M34 44c6 6 18 6 24 0" stroke="rgba(67,160,71,.85)" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <circle cx="46" cy="58" r="6" fill="rgba(141,110,99,.65)"/>
+              </svg>
+            </div>
+            <div class="imgtext">
+              <strong>Picture idea:</strong>
+              <p>Draw a bucket, warm water, and a coco coir block turning into fluffy soil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid wrap">
+    <!-- LEFT: Main content -->
+    <article class="card">
+      <h2>✅ Step-by-step (tap to open)</h2>
+
+      <details open>
+        <summary>
+          <span class="stepTitle"><span class="badge">1</span> Make coco coir fluffy</span>
+          <span class="chev">➕</span>
+        </summary>
+        <ul class="list">
+          <li>Put the coco coir block in a bucket or bowl.</li>
+          <li>Add warm water (not boiling). Wait 10–20 minutes.</li>
+          <li>Use clean hands or a fork to fluff it up.</li>
+          <li>It should feel like a wrung‑out sponge: damp, not dripping.</li>
+        </ul>
+
+        <div class="imgbox">
+          <div class="svg" aria-hidden="true">
+            <!-- SVG: water droplets -->
+            <svg width="92" height="92" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
+              <rect width="92" height="92" rx="18" fill="rgba(46,125,50,.10)"/>
+              <path d="M46 18c10 14 16 22 16 30a16 16 0 1 1-32 0c0-8 6-16 16-30Z"
+                    fill="rgba(67,160,71,.55)" stroke="rgba(23,50,31,.55)" stroke-width="2"/>
+              <path d="M26 64c4 5 8 8 14 10" stroke="rgba(23,50,31,.45)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="imgtext">
+            <strong>Beginner tip:</strong>
+            <p>If it’s too wet, squeeze a handful gently to remove extra water.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="stepTitle"><span class="badge">2</span> Fill your pots</span>
+          <span class="chev">➕</span>
+        </summary>
+        <ul class="list">
+          <li>Fill each pot with damp coco coir.</li>
+          <li>Tap the pot lightly (don’t squash it hard).</li>
+          <li>Leave a small gap at the top (about 1 cm) for watering.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>
+          <span class="stepTitle"><span class="badge">3</span> Plant the seeds</span>
+          <span class="chev">➕</span>
+        </summary>
+        <ul class="list">
+          <li>Make a tiny hole with your finger or pencil.</li>
+          <li>Put the seed in the hole.</li>
+          <li>Cover it lightly with coco coir.</li>
+          <li>Spray with water so the seed stays in place.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Quick rule for depth:</strong><br />
+          Many seeds like to be planted about <em>2× as deep as the seed is wide</em>.
+          Always check your seed packet if you have one.
+        </div>
+
+        <div class="imgbox">
+          <div class="svg" aria-hidden="true">
+            <!-- SVG: pot + sprout -->
+            <svg width="92" height="92" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
+              <rect width="92" height="92" rx="18" fill="rgba(46,125,50,.10)"/>
+              <path d="M28 40h36l-5 36H33l-5-36Z" fill="rgba(141,110,99,.55)" stroke="rgba(23,50,31,.55)" stroke-width="2"/>
+              <path d="M46 42v18" stroke="rgba(67,160,71,.9)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M46 48c-8 0-10-8-10-8s8-2 10 8Z" fill="rgba(67,160,71,.65)"/>
+              <path d="M46 48c8 0 10-8 10-8s-8-2-10 8Z" fill="rgba(67,160,71,.65)"/>
+            </svg>
+          </div>
+          <div class="imgtext">
+            <strong>Picture idea:</strong>
+            <p>Draw a pot, a seed under the soil, then a tiny sprout popping up.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="stepTitle"><span class="badge">4</span> Label + place somewhere nice</span>
+          <span class="chev">➕</span>
+        </summary>
+        <ul class="list">
+          <li>Write the plant name and date on a label.</li>
+          <li>Put pots somewhere warm and bright (windowsill is great).</li>
+          <li>Some seeds like a clear lid or cling film to keep moisture in (poke tiny air holes).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>
+          <span class="stepTitle"><span class="badge">5</span> Watering & aftercare</span>
+          <span class="chev">➕</span>
+        </summary>
+        <ul class="list">
+          <li>Keep coco coir <strong>damp</strong>, not soggy.</li>
+          <li>Use a spray bottle for tiny seeds so they don’t wash away.</li>
+          <li>When leaves appear, give more light so seedlings don’t stretch.</li>
+          <li>Coco coir has very few nutrients, so later you can add weak plant feed (once seedlings have a few leaves).</li>
+        </ul>
+        <div class="callout">
+          <strong>Safety note:</strong> Wash hands after gardening. Ask an adult before using fertiliser/plant feed.
+        </div>
+      </details>
+
+      <hr style="border:none;border-top:1px solid var(--line);margin:16px 0;">
+
+      <h2>🧪 Mini science bit (for school projects)</h2>
+      <p class="subtitle">
+        Coco coir helps because it holds water like a sponge and also leaves little air gaps for roots.
+        Seeds need <strong>water</strong>, <strong>warmth</strong>, and <strong>air</strong> to start growing.
+      </p>
+
+      <div class="callout">
+        <strong>Try this:</strong> Plant the same seeds in two pots:
+        one with coco coir and one with compost. Keep watering the same.
+        Write what you see each day (sprout date, height, leaf count).
+      </div>
+    </article>
+
+    <!-- RIGHT: Sidebar -->
+    <aside class="card">
+      <h2>📝 Checklist (tap to tick)</h2>
+
+      <div class="progress" aria-label="Progress bar">
+        <div class="bar" id="bar"></div>
+      </div>
+      <div class="small" id="progressText">0% done</div>
+
+      <div class="checklist" id="checklist">
+        <label><input type="checkbox" /> I washed my hands / cleaned my tools</label>
+        <label><input type="checkbox" /> I soaked and fluffed the coco coir</label>
+        <label><input type="checkbox" /> I filled pots (not too tight)</label>
+        <label><input type="checkbox" /> I planted seeds at the right depth</label>
+        <label><input type="checkbox" /> I labelled the pots with name + date</label>
+        <label><input type="checkbox" /> I watered gently</label>
+        <label><input type="checkbox" /> I put pots somewhere warm and bright</label>
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
+
+      <h2>❓ Quick quiz</h2>
+      <p class="subtitle">Choose an answer — it will tell you if you’re right!</p>
+
+      <div class="quiz">
+        <div class="q" data-answer="b">
+          <p>1) Coco coir is made from…</p>
+          <div class="answers">
+            <button type="button" data-choice="a">🪵 Wood</button>
+            <button type="button" data-choice="b">🥥 Coconut husks</button>
+            <button type="button" data-choice="c">🪨 Rocks</button>
+          </div>
+          <div class="result" aria-live="polite"></div>
+        </div>
+
+        <div class="q" data-answer="c">
+          <p>2) Coco coir should be…</p>
+          <div class="answers">
+            <button type="button" data-choice="a">💧 Dripping wet</button>
+            <button type="button" data-choice="b">🏜️ Dust dry</button>
+            <button type="button" data-choice="c">🧽 Damp like a wrung sponge</button>
+          </div>
+          <div class="result" aria-live="polite"></div>
+        </div>
+
+        <div class="q" data-answer="a">
+          <p>3) Best way to water tiny seeds is…</p>
+          <div class="answers">
+            <button type="button" data-choice="a">🌫️ A gentle spray</button>
+            <button type="button" data-choice="b">🚿 A strong hose</button>
+            <button type="button" data-choice="c">🪣 Tip a bucket in</button>
+          </div>
+          <div class="result" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
+
+      <h2>📚 Key words</h2>
+      <ul class="list">
+        <li><strong>Moisture</strong> = a little bit wet</li>
+        <li><strong>Germinate</strong> = when a seed starts growing</li>
+        <li><strong>Seedling</strong> = a baby plant</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Fun fact:</strong> Coco coir is a plant-based material, so many people use it instead of peat.
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    Made for beginners 🌱 • Tip: You can edit the author name and add your own photos.<br>
+    <span class="small">© 2026 — Your Gardening Project</span>
+  </footer>
+
+  <script>
+    // Dark mode toggle (saved in localStorage)
+    const themeBtn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    function updateThemeButton(){
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeBtn.innerHTML = isDark ? '☀️ <span>Light mode</span>' : '🌙 <span>Dark mode</span>';
+    }
+    updateThemeButton();
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const next = isDark ? '' : 'dark';
+      if (next) document.documentElement.setAttribute('data-theme', next);
+      else document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', next);
+      updateThemeButton();
+    });
+
+    // Checklist progress
+    const checklist = document.getElementById('checklist');
+    const boxes = Array.from(checklist.querySelectorAll('input[type="checkbox"]'));
+    const bar = document.getElementById('bar');
+    const progressText = document.getElementById('progressText');
+
+    function updateProgress(){
+      const done = boxes.filter(b => b.checked).length;
+      const total = boxes.length;
+      const pct = Math.round((done / total) * 100);
+      bar.style.width = pct + '%';
+      progressText.textContent = pct + '% done';
+    }
+    boxes.forEach(b => b.addEventListener('change', updateProgress));
+    updateProgress();
+
+    // Quiz logic
+    document.querySelectorAll('.q').forEach(q => {
+      const correct = q.getAttribute('data-answer');
+      const result = q.querySelector('.result');
+      q.querySelectorAll('button[data-choice]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const choice = btn.getAttribute('data-choice');
+          if (choice === correct) {
+            result.textContent = '✅ Correct! Great job.';
+            result.classList.remove('bad');
+            result.classList.add('good');
+          } else {
+            result.textContent = '❌ Not quite. Try again!';
+            result.classList.remove('good');
+            result.classList.add('bad');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
